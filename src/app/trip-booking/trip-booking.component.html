@@ -1,0 +1,69 @@
+<!-- <html>
+<body>
+    <div>
+        <img src="/assets/images/booking.jpg" alt="booking image" width="100%" height="250px" > 
+    
+    <table>
+        <tr>
+            <td>Pickup Location : </td>
+            <td><input type="text" name="text" id="pl" #fromLocation/></td>
+        </tr>
+        <tr>
+            <td>Drop Location : </td>
+            <td><input type="text" name="text" id="pl" #toLocation/></td>
+        </tr>
+        <tr>
+            <td><button type="submit" value="Book Your Ride" 
+                (click)="addTrip(fromLocation.value,toLocation.value)">Book your ride</button></td>
+            <td><input type="button" value="Cancel Your Ride"/></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>  -->
+
+
+
+
+
+
+
+
+
+
+<div>
+    <img src="/assets/images/booking.jpg" alt="booking image" width="100%" height="250px" > 
+    </div>
+<div style="margin-left: 2%; width: 40%; height: 70%; background-color: antiquewhite;">
+    <form (ngSubmit)="submitForm()" #bookingForm="ngForm">
+        <tr>
+            <div class="form-group">
+                <label for ="fromLocation">Pickup Location</label>
+                <td><input type="text" #fromLocation = "ngModel" pattern="[a-zA-Z]+" [(ngModel)]="t.fromLocation" class="form-control" id="fromLocation" name="fromLocation" required/></td>
+                </div> 
+                <div *ngIf = "fromLocation.invalid">
+                    <span style="color: red;" *ngIf="fromLocation.errors?.['pattern']">
+                        Pick up Location is mandatory
+                    </span>
+                    <span style="color: red;" *ngIf="fromLocation.errors?.['pattern']">
+                        Pick up Location is not valid
+                    </span>
+                </div>              
+            </tr>
+        <tr>
+            <div class="form-group">
+                    <label for ="toLocation">Drop Location</label>
+                <td><input type="text" #toLocation = "ngModel" pattern="[a-zA-Z]+" [(ngModel)]="t.toLocation" class="form-control" id="toLocation" name="toLocation" required/></td>  
+                </div>
+                <div *ngIf = "toLocation.invalid">
+                    <span style="color: red;" *ngIf="toLocation.errors?.['pattern']">
+                        Drop Location is mandatory
+                    </span>
+                    <span style="color: red;" *ngIf="toLocation.errors?.['pattern']">
+                        Drop Location is not valid
+                    </span>
+                </div>              
+            </tr> 
+            <button type = "submit" class="btn btn-primary mb-2" [disabled]="bookingForm.form.invalid" click="submitForm()" #tripbooking>Book your Ride</button>
+    </form>
+</div>

@@ -1,0 +1,76 @@
+<p>sample works!</p>
+<div>
+ <button (click)="getAlltrips()">List of Trips</button>
+ <div *ngFor="let x of alltrips"> 
+     <div>{{x.fromLocation}} to {{x.toLocation}}</div>
+</div>
+</div>
+<hr/>
+<div>
+<input type="text" #userId>
+<button (click)="getAlltripsByUser(userId.value)">Load by userId</button>
+<div *ngFor="let b of alltrips">
+    <table>
+        <tr>
+            <td>{{b.fromLocation}}</td>
+            <td>{{b.toLocation}}</td>
+        </tr>
+    </table>
+</div>
+</div>
+<hr/>
+<div>
+    <input type="text" #driverId>
+    <button (click)="getAlltripsByDriver(driverId.value)">Load by driverId</button>
+    <div *ngFor="let b of alltrips">
+        <table>
+            <tr>
+                <td>{{b.fromLocation}}</td>
+                <td>{{b.toLocation}}</td>
+            </tr>
+        </table>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <input type="text" value="name"   #userId>
+<button (click)="getAlltripsByUser(userId.value)">List of Trips By User</button>
+    <div>{{x.fromLocation}} </div>
+    <div>{{x.toLocation}}</div>    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
